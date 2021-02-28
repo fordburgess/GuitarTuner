@@ -1,0 +1,47 @@
+@import URL("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  background-image: url("http://holidaymountainmusic.com/wp-content/uploads/2017/08/1280px-Radio_City_Music_Hall_3051638324_4a385c5623.jpg");
+  background-size: cover;
+}
+
+.keys {
+  display: flex;
+  flex: 10;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border: 0.4rem solid rgb(238, 183, 34);
+  border-radius: 0.5rem;
+  margin: 1rem;
+  font-size: 0.1rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.2s;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(238, 183, 34, 0.575);
+  text-shadow: 0 0 0.5rem black;
+}
+.playing {
+  transform: scale(1.2);
+  border-color: rgb(247, 185, 15);
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 3rem;
+  font-family: "Montserrat";
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: white;
+  font-family: "Montserrat";
+}

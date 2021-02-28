@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="GuitarTunerStyle.css" />
+  </head>
+ 
+  <body>
+    <div class="keys">
+    <div data-key="69" class="key">
+      <kbd>E</kbd>
+      <span class="sound">Low E</span>
+    </div>
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">A string</span>
+    </div>
+    <div data-key="68" class='key'>
+      <kbd>D</kbd>
+      <span class="sound">D string</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">G string</span>
+    </div>
+    <div data-key="66" class="key">
+      <kbd>B</kbd>
+      <span class="sound">B string</span>
+    </div>
+    <div data-key="81" class="key">
+      <kbd>Q</kbd>
+      <span class="sound">High E</span> 
+    </div>
+
+    
+    
+    
+    <audio data-key="69" src="E1.m4a"></audio>
+    <audio data-key="65" src="A1.m4a"></audio>
+    <audio data-key="68" src="D2.m4a"></audio>
+    <audio data-key="71" src="G2.m4a"></audio>
+    <audio data-key="66" src="B2.m4a"></audio>
+    <audio data-key="81" src="E3.m4a"></audio>
+
+  <script>
+    window.addEventListener('keydown', function(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      if(!audio) return;
+      audio.currentTime = 0;
+      audio.play();
+      key.classList.add('playing');
+      
+      function removeTransition(e) {
+        if (e.propertyName !== 'transform') return;
+        this.classList.remove('playing');
+      }
+      const keys = document.querySelectorAll('.key');
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    }
+    )
+  </script>
+
+  </body>
+</html>
